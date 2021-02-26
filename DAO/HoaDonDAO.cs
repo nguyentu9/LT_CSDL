@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
 using LT_CSDL.DTO;
 namespace LT_CSDL.DAO
 {
@@ -36,21 +37,32 @@ namespace LT_CSDL.DAO
         }
         public static void Luu(HoaDonDTO hoadon, string sqlChiTietHoaDon)
         {
-
-            string s = $"insert into HOADON values({hoadon.makh}, {hoadon.manv},'{hoadon.ngaylap}')";
-          
+            try
+            {
+                string s = $"insert into HOADON values({hoadon.makh}, {hoadon.manv},'{hoadon.ngaylap}')";
+                KetNoiCSDL.ExcuteNonQuery(s);
+                KetNoiCSDL.ExcuteNonQuery(sqlChiTietHoaDon);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lưu thất bại");
+            }
+        }
+        public static void Sua(HoaDonDTO hoadon, string sqlChiTietHoaDon)
+        {
+            string s = $"update HOADON set MaKH={hoadon.makh}, MaNV={hoadon.manv}, NgayLap='{hoadon.ngaylap}' where MaHD={hoadon.mahd}";
             KetNoiCSDL.ExcuteNonQuery(s);
             KetNoiCSDL.ExcuteNonQuery(sqlChiTietHoaDon);
         }
-        public static void Sua(KhachHangDTO kh)
+        public static void Xoa(HoaDonDTO hoadon)
         {
-            string s = $"update KHACHHANG set TenKH=N'{kh.ten}', DiaChi=N'{kh.diachi}', SDT='{kh.sdt}' where MaKH={kh.ma}";
+            string s = $"delete from HOADON where MaHD={hoadon.mahd}";
             KetNoiCSDL.ExcuteNonQuery(s);
         }
-        public static void Xoa(KhachHangDTO kh)
+        public static void XoaCTHD(HoaDonDTO hoadon)
         {
-            string s = $"delete from KHACHHANG where MaKH={kh.ma}";
-            KetNoiCSDL.ExcuteNonQuery(s);
+            string sqlCTHD = $"delete from CTHD where MaHD={hoadon.mahd}";
+            KetNoiCSDL.ExcuteNonQuery(sqlCTHD);
         }
     }
 }

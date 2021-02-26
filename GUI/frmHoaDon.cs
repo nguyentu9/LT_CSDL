@@ -117,12 +117,50 @@ namespace LT_CSDL.GUI
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-
+            if (lvspdachon.Items.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn sản phẩm để sửa!", "Thông báo");
+                return;
+            }
+            HoaDonDTO hoadon = new HoaDonDTO()
+            {
+                mahd = txtma.Text,
+                makh = txtMaKhachHang.Text,
+                manv = txtMaNhanVien.Text,
+                ngaylap = string.Format("{0:MM/dd/yyyy}", dtpthoigian.Value)
+            };
+            string sqlChiTietHoaDon = "insert into CTHD values";
+            for (int i = 0; i < lvspdachon.Items.Count; i++)
+            {
+                string maSanPham = lvspdachon.Items[i].SubItems[0].Text;
+                string soluong = lvspdachon.Items[i].SubItems[2].Text;
+                sqlChiTietHoaDon += $"({txtma.Text}, {maSanPham}, {soluong}),";
+            }
+            sqlChiTietHoaDon = sqlChiTietHoaDon.Remove(sqlChiTietHoaDon.Length - 1);
+            HoaDonDAO.XoaCTHD(hoadon);
+            HoaDonDAO.Sua(hoadon, sqlChiTietHoaDon);
+            XoaTrang();
+            MessageBox.Show("Sửa thành công");
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
+            if (tvdanhsach.SelectedNode == null)
+            {
+                MessageBox.Show("Bạn chưa chọn hoá đơn để xoá!", "Thông báo");
+                return;
+            }
+            if (MessageBox.Show("Bạn có thực sự muốn xoá?", 
+                "Thông báo", 
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Warning) == DialogResult.No) return;
 
+            HoaDonDTO hoadon = new HoaDonDTO()
+            {
+                mahd = txtma.Text,
+            };
+            HoaDonDAO.Xoa(hoadon);
+            XoaTrang();
         }
 
         private void btnthoat_Click(object sender, EventArgs e)
