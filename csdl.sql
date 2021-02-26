@@ -93,12 +93,12 @@ insert into NHANVIEN ( TenNV, DiaChi, SDT) values ( 'Jeno Dyball', '94 Jenifer A
 
 insert into LOAI values (N'Thức Ăn'), (N'Điện tử');
 
-insert into SANPHAM (TenSP, MaLoai, GiaTien) values ('Energy Drink - Redbull 355ml', 1, 72489),
+insert into SANPHAM values ('Energy Drink - Redbull 355ml', 1, 72489),
 											('Tomatoes', 1, 93457),
 											('Bagel - Ched Chs Presliced', 1, 56419),
 											('Cheese - Pied De Vents', 1, 64297),
 											('Wiberg Super Cure', 1, 27729),
-											('Table Cloth 54x72 Colour', 1, 42034),
+											('Table Cloth 54x72 Colour', 2, 42034),
 											('Honey - Liquid', 1, 76140),
 											('Ice Cream - Vanilla', 1, 20796),
 											('Mushroom - Shitake, Fresh', 1, 14729),
@@ -138,3 +138,9 @@ select * from HOADON
 select * from CTHD
 select * from SANPHAM
 select * from KHO
+
+
+select MaSP, TenSP, l.TenLoai, GiaTien 
+from SANPHAM s 
+inner join LOAI l 
+on s.MaSP = s.MaSP

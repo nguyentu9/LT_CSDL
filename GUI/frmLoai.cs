@@ -83,7 +83,7 @@ namespace LT_CSDL.GUI
         {
             if (txtma.Text == "")
             {
-                MessageBox.Show("Bạn chưa chọn khách hàng cần xoá!");
+                MessageBox.Show("Bạn chưa chọn loại cần xoá!");
                 return;
             }
             if (MessageBox.Show("Bạn có thực sự muốn xoá ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No) return;

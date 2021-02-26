@@ -16,5 +16,10 @@ namespace LT_CSDL.GUI
         {
             InitializeComponent();
         }
+
+        private void frmHoaDon_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
