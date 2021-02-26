@@ -78,6 +78,7 @@ create table PHIEUXUAT(
 );
 go
 
+insert into TAIKHOAN values('admin', '123');
 
 insert into KHACHHANG (TenKH, DiaChi, SDT) values ('Lanita Goschalk', '472 Barby Road', '6676004869'),
 												  ('Kamilah Give', '831 Bluejay Lane', '5106659925'),

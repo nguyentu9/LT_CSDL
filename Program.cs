@@ -16,17 +16,10 @@ namespace LT_CSDL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
 
-            //Application.Run(new frmKhachHang());
-            //Application.Run(new frmNhanVien());
-            //Application.Run(new frmLoai());
-            //Application.Run(new frmSanPham());
-            //Application.Run(new frmKho());
-            //Application.Run(new frmHoaDon());
 
-            Application.Run(new frmMenu());
-
+            //Application.Run(new frmMenu());
+            Application.Run(new frmDangNhap());
         }
     }
 }
