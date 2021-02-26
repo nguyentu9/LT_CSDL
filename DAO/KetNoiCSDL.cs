@@ -16,7 +16,7 @@ namespace LT_CSDL.DAO
             try { 
             if(conn == null)
             {
-                string sql = "Data Source=DESKTOP-P8MOIJI;Initial Catalog=QLTV;Integrated Security=True";
+                string sql = "Data Source=DESKTOP-P8MOIJI;Initial Catalog=QuanLyKho;Integrated Security=True";
                 conn = new SqlConnection(sql);
             }
             if (conn.State == ConnectionState.Closed) conn.Open();

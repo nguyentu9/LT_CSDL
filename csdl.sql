@@ -120,3 +120,12 @@ insert into CTHD (MaHD, MaSP, NgayLap, SoLuong) values (2, 5, '6/18/2020', 113);
 insert into CTHD (MaHD, MaSP, NgayLap, SoLuong) values (3, 9, '12/22/2020', 174);
 insert into CTHD (MaHD, MaSP, NgayLap, SoLuong) values (4, 9, '2/4/2021', 112);
 insert into CTHD (MaHD, MaSP, NgayLap, SoLuong) values (5, 6, '1/3/2021', 44);
+
+
+
+select * from KHACHHANG
+select * from NHANVIEN
+select * from HOADON
+select * from CTHD
+select * from SANPHAM
+select * from KHO
