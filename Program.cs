@@ -18,7 +18,8 @@ namespace LT_CSDL
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             //Application.Run(new frmKhachHang());
-            Application.Run(new frmNhanVien());
+            //Application.Run(new frmNhanVien());
+            Application.Run(new frmLoai());
         }
     }
 }

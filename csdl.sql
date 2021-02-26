@@ -25,37 +25,42 @@ go
 create table HOADON(
 	MaHD int primary key(MaHD) identity,
 	MaKH int,
-	MaNV int
+	MaNV int,
+	NgayLap date,
 
 	foreign key(MaKH) references KHACHHANG(MaKH),
 	foreign key(MaNV) references NHANVIEN(MaNV)
 );
 go
-
+create table LOAI(
+	MaLoai int primary key(MaLoai) identity,
+	TenLoai nvarchar(30)
+);
+go
 create table SANPHAM(
 	MaSP int primary key(MaSP) identity,
 	TenSP nvarchar(30) unique,
+	MaLoai int,
 	GiaTien int
+
+	foreign key(MaLoai) references LOAI(MaLoai)
 );
 go
 create table CTHD(
 	MaHD int primary key(MaHD, MaSP),
 	MaSP int,
-	NgayLap date,
 	SoLuong int
 
 	foreign key(MaHD) references HOADON(MaHD),
 	foreign key(MaSP) references SANPHAM(MaSP),
 );
 go
-
 create table KHO(
 	MaSP int primary key(MaSP),
 	SoLuongTonKho int
 	foreign key(MaSP) references SANPHAM(MaSP)
 );
 go
-
 create table PHIEUNHAP(
 	MaPhieu int primary key(MaPhieu) identity,
 	MaSP int,
@@ -64,7 +69,6 @@ create table PHIEUNHAP(
 	foreign key(MaSP) references SANPHAM(MaSP)
 );
 go
-
 create table PHIEUXUAT(
 	MaPhieu int primary key(MaPhieu) identity,
 	MaSP int,
@@ -87,16 +91,18 @@ insert into NHANVIEN ( TenNV, DiaChi, SDT) values ( 'Jeno Dyball', '94 Jenifer A
 												  ( 'Allsun Edmand', '37 Springs Way', '6921172446'),
 												  ( 'Nilson Teas', '92 Carey Alley', '5784101248');
 
-insert into SANPHAM (TenSP, GiaTien) values ('Energy Drink - Redbull 355ml', 72489),
-											('Tomatoes', 93457),
-											('Bagel - Ched Chs Presliced', 56419),
-											('Cheese - Pied De Vents', 64297),
-											('Wiberg Super Cure', 27729),
-											('Table Cloth 54x72 Colour', 42034),
-											('Honey - Liquid', 76140),
-											('Ice Cream - Vanilla', 20796),
-											('Mushroom - Shitake, Fresh', 14729),
-											('Pears - Bosc', 38843);
+insert into LOAI values (N'Thức Ăn'), (N'Điện tử');
+
+insert into SANPHAM (TenSP, MaLoai, GiaTien) values ('Energy Drink - Redbull 355ml', 1, 72489),
+											('Tomatoes', 1, 93457),
+											('Bagel - Ched Chs Presliced', 1, 56419),
+											('Cheese - Pied De Vents', 1, 64297),
+											('Wiberg Super Cure', 1, 27729),
+											('Table Cloth 54x72 Colour', 1, 42034),
+											('Honey - Liquid', 1, 76140),
+											('Ice Cream - Vanilla', 1, 20796),
+											('Mushroom - Shitake, Fresh', 1, 14729),
+											('Pears - Bosc', 1, 38843);
 
 insert into KHO values (1, 200), 
 					   (2, 200),
@@ -109,19 +115,22 @@ insert into KHO values (1, 200),
 					   (9, 200),
 					   (10, 200);
 
-insert into HOADON values(1, 1),
-						 (2, 1),
-						 (3, 3),
-						 (4, 2),
-						 (5, 1);
+insert into HOADON values(1, 1,'12/24/2020'),
+						 (2, 1,'6/18/2020'),
+						 (3, 3, '12/22/2020'),
+						 (4, 2, '2/4/2021'),
+						 (5, 1, '1/3/2021');
 
-insert into CTHD (MaHD, MaSP, NgayLap, SoLuong) values (1, 10, '12/24/2020', 142);
-insert into CTHD (MaHD, MaSP, NgayLap, SoLuong) values (2, 5, '6/18/2020', 113);
-insert into CTHD (MaHD, MaSP, NgayLap, SoLuong) values (3, 9, '12/22/2020', 174);
-insert into CTHD (MaHD, MaSP, NgayLap, SoLuong) values (4, 9, '2/4/2021', 112);
-insert into CTHD (MaHD, MaSP, NgayLap, SoLuong) values (5, 6, '1/3/2021', 44);
+insert into CTHD (MaHD, MaSP, SoLuong) values (1, 10, 142);
+insert into CTHD (MaHD, MaSP, SoLuong) values (2, 5, 113);
+insert into CTHD (MaHD, MaSP, SoLuong) values (3, 9, 174);
+insert into CTHD (MaHD, MaSP, SoLuong) values (4, 9, 112);
+insert into CTHD (MaHD, MaSP, SoLuong) values (5, 6, 44);
 
 
+
+
+select top 1 MaKH from KHACHHANG order by MaKH desc
 
 select * from KHACHHANG
 select * from NHANVIEN
