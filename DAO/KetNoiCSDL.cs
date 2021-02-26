@@ -13,13 +13,15 @@ namespace LT_CSDL.DAO
         private static SqlConnection conn = null;
         public static void MoKetNoi()
         {
-            try { 
-            if(conn == null)
+            try
             {
-                string sql = "Data Source=DESKTOP-48SBSQC;Initial Catalog=QuanLyKho;Integrated Security=True";
-                conn = new SqlConnection(sql);
-            }
-            if (conn.State == ConnectionState.Closed) conn.Open();
+                if (conn == null)
+                {
+                   // string sql = "Data Source=DESKTOP-48SBSQC;Initial Catalog=QuanLyKho;Integrated Security=True";
+                    string sql = "Data Source=DESKTOP-P8MOIJI;Initial Catalog=QuanLyKho;Integrated Security=True";
+                    conn = new SqlConnection(sql);
+                }
+                if (conn.State == ConnectionState.Closed) conn.Open();
             }
             catch (Exception)
             {
@@ -28,7 +30,7 @@ namespace LT_CSDL.DAO
         }
         public static void DongKetNoi()
         {
-            if(conn.State == ConnectionState.Open) conn.Close();
+            if (conn.State == ConnectionState.Open) conn.Close();
         }
         public static DataTable ExcuteQuery(string s)
         {

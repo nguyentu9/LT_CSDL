@@ -90,6 +90,12 @@
     <Compile Include="GUI\frmLoai.Designer.cs">
       <DependentUpon>frmLoai.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <EmbeddedResource Include="GUI\frmLoai.resx">
       <DependentUpon>frmLoai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +139,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -146,6 +156,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="csdl.sql" />
+    <None Include="icon\thoat.png" />
+    <None Include="icon\sorting.png" />
+    <None Include="icon\sanpham.png" />
+    <None Include="icon\nhanvien.png" />
+    <None Include="icon\kho.png" />
+    <None Include="icon\khachhang.png" />
+    <None Include="icon\hoadon.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

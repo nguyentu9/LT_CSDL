@@ -214,6 +214,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmKhachHang";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             this.groupBox1.ResumeLayout(false);

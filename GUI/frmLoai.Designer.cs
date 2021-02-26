@@ -173,6 +173,7 @@
             this.Controls.Add(this.btnthem);
             this.Controls.Add(this.label1);
             this.Name = "frmLoai";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoai";
             this.Load += new System.EventHandler(this.frmLoai_Load);
             this.groupBox2.ResumeLayout(false);

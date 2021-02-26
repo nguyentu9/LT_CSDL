@@ -181,6 +181,7 @@
             this.Controls.Add(this.btnthem);
             this.Controls.Add(this.label1);
             this.Name = "frmKho";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmKho";
             this.Load += new System.EventHandler(this.frmKho_Load);
             this.groupBox2.ResumeLayout(false);

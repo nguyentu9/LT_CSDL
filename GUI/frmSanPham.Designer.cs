@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtgiatien = new System.Windows.Forms.NumericUpDown();
             this.cboloai = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -43,10 +44,9 @@
             this.btnsua = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtgiatien = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvdanhsach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtgiatien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvdanhsach)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -65,6 +65,18 @@
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin sản phẩm";
+            // 
+            // txtgiatien
+            // 
+            this.txtgiatien.Location = new System.Drawing.Point(155, 187);
+            this.txtgiatien.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.txtgiatien.Name = "txtgiatien";
+            this.txtgiatien.Size = new System.Drawing.Size(292, 20);
+            this.txtgiatien.TabIndex = 9;
             // 
             // cboloai
             // 
@@ -195,18 +207,6 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "QUẢN LÝ SẢN PHẨM";
             // 
-            // txtgiatien
-            // 
-            this.txtgiatien.Location = new System.Drawing.Point(155, 187);
-            this.txtgiatien.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.txtgiatien.Name = "txtgiatien";
-            this.txtgiatien.Size = new System.Drawing.Size(292, 20);
-            this.txtgiatien.TabIndex = 9;
-            // 
             // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,12 +221,13 @@
             this.Controls.Add(this.btnthem);
             this.Controls.Add(this.label1);
             this.Name = "frmSanPham";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSanPham";
             this.Load += new System.EventHandler(this.frmSanPham_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvdanhsach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtgiatien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvdanhsach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
