@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace LT_CSDL.DTO
 {
-    class HoaDonDTO
+    class ChiTietHoaDonDTO
     {
         public string mahd { get; set; }
-        public string makh { get; set; }
-        public string manv { get; set; }
-        public string ngaylap { get; set; }
+        public string thoigian { get; set; }
+        public string masp { get; set; }
+        public string soluong { get; set; }
+
     }
 }

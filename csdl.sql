@@ -149,3 +149,9 @@ select top 1 MaSP from SANPHAM order by MaSP desc
 
 
 select k.MaSP, s.TenSP, SoLuongTonKho from KHO k inner join SANPHAM s on k.MaSP = s.MaSP
+
+select MaHD, k.TenKH from HOADON h inner join KHACHHANG k on k.MaKH = h.MaKH
+
+
+select MaHD, k.TenKH, n.TenNV, NgayLap from HOADON d inner join KHACHHANG k on d.MaKH = k.MaKH inner join NHANVIEN n on n.MaNV = d.MaNV where MaHD=1
+select MaHD, s.MaSP, s.TenSP, SoLuong from CTHD c inner join SANPHAM s on c.MaSP = s.MaSP where MaHD = 1
