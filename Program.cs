@@ -21,7 +21,11 @@ namespace LT_CSDL
             //Application.Run(new frmKhachHang());
             //Application.Run(new frmNhanVien());
             //Application.Run(new frmLoai());
-            Application.Run(new frmSanPham());
+            //Application.Run(new frmSanPham());
+
+            Application.Run(new frmKho());
+
+            //Application.Run(new frmHoaDon());
         }
     }
 }

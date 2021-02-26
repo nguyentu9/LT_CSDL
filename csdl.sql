@@ -143,4 +143,9 @@ select * from KHO
 select MaSP, TenSP, l.TenLoai, GiaTien 
 from SANPHAM s 
 inner join LOAI l 
-on s.MaSP = s.MaSP
+on s.MaLoai = l.MaLoai
+
+select top 1 MaSP from SANPHAM order by MaSP desc
+
+
+select k.MaSP, s.TenSP, SoLuongTonKho from KHO k inner join SANPHAM s on k.MaSP = s.MaSP

@@ -21,5 +21,35 @@ namespace LT_CSDL.GUI
         {
 
         }
+
+        private void btnthem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnluu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnxoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnthoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void gvdanhsach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
